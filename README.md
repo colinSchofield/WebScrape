@@ -20,7 +20,7 @@ The first command will compile the programme and ensure that all the unit test c
 The second will run the console application, generating the JSON values.
 
 
-Enjoy!
-Colin Schofield
-e: colin_sch@yahoo.com
-p: 07490 686 382
+Enjoy!  
+Colin Schofield  
+e: colin_sch@yahoo.com  
+p: 07490 686 382  
