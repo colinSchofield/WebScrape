@@ -37,11 +37,11 @@ public class SainsburysManager {
     @Autowired
     private WebDriver driver;
 
+    @Autowired
+    private WebDriverWait wait;
+
     @Value("${sainsburys.url}")
     private String urlToScrape;
-
-    @Value("${sainsburys.pageTimeout:10}")
-    private int pageTimeout;
 
     private static final String PRODUCT_LIST = "#productLister > ul > li";
     private static final String PRODUCT_INFO = "div.product > div > div.productInfoWrapper > div > h3 > a";
@@ -72,8 +72,7 @@ public class SainsburysManager {
             log.debug("About to drill down to obtain the product description.");
 
             driver.navigate().to(product.attr("href"));
-            WebElement wait = new WebDriverWait(driver, 10)
-                    .until(ExpectedConditions.presenceOfElementLocated(By.id("globalFooter")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.id("globalFooter")));
 
             String subHtml = driver.getPageSource();
             Document subDoc = Jsoup.parse(subHtml);
@@ -103,8 +102,7 @@ public class SainsburysManager {
     private void openMainPage(WebDriver driver) {
 
         driver.navigate().to(urlToScrape);
-        new WebDriverWait(driver, pageTimeout)
-                .until(ExpectedConditions.presenceOfElementLocated(By.id("globalFooter")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("globalFooter")));
     }
 
     /** Remove the textual value, i.e. £2.04/unit -> 2.04 */

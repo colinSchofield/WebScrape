@@ -6,9 +6,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * This is an integration test!
+ * This is an integration test. Check out WebScrapeTest for a Unit Test, that is completely mocked using Mockito
  *
- * @TODO Mock the WebDriver, using Mockito - If there is time.
+ * @see WebScrapeTest
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
