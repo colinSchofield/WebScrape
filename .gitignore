@@ -1,0 +1,11 @@
+*.iml
+.classpath
+.idea/
+.mvn/
+.project
+.settings
+/codedeploy/helpers/
+/config/
+/target/
+pom.xml.versionsBackup
+/bin/
